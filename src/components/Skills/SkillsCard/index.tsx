@@ -4,6 +4,7 @@ import { colors } from "../../../constants/colors";
 interface SkillsCardProps {
 	children?: React.ReactNode;
 	upsideDown?: boolean;
+	cardDataType: "Text" | "TechCard" | "none";
 }
 
 export default function SkillsCard(props: SkillsCardProps) {
@@ -22,10 +23,24 @@ export default function SkillsCard(props: SkillsCardProps) {
 					borderBottom={`17rem solid ${colors["verde-militar"]}`} // Altura do triângulo
 				/>
 				<Flex
-					w='30rem'
-					h='17rem'
-					bg={colors["verde-militar"]}
-					borderRadius='0px 30px 30px 0px'
+					style={
+						props.cardDataType === "TechCard"
+							? {
+									width: "30rem",
+									height: "17rem",
+									backgroundColor: colors["verde-militar"],
+									borderRadius: "0px 30px 30px 0px",
+									justifyContent: "center",
+									alignItems: "center",
+									gap: "2.5rem",
+							  }
+							: {
+									width: "30rem",
+									height: "17rem",
+									backgroundColor: colors["verde-militar"],
+									borderRadius: "0px 30px 30px 0px",
+							  }
+					}
 				>
 					{props.children}
 				</Flex>

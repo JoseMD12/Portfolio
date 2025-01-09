@@ -1,15 +1,32 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { animate, motion, useMotionValue } from "framer-motion";
+import { useEffect, useRef } from "react";
 import Profile1 from "../../assets/Profile/Profile1.png";
 import Header from "../../components/Header";
 import { colors } from "../../constants/colors";
 import { fontSize, fontWeight } from "../../constants/fontSize";
 
+const MotionBox = motion.create(Box);
+
 export default function Home() {
+	const controlsRef = useRef<any>(null);
+	const rotate = useMotionValue(335);
+	useEffect(() => {
+		const controls = animate(rotate, 695, {
+			duration: 5,
+			ease: "linear",
+			repeat: Infinity,
+		});
+
+		controlsRef.current = controls;
+		controls.pause();
+	}, []);
+
 	return (
 		<Flex flexDirection='column' zIndex={1}>
 			<Header />
 
-			<Flex w='full' pt='3rem' id='Home'>
+			<Flex w='100vw' pt='3rem' id='Home'>
 				<Flex pt='8rem' pl='12rem' flexDirection='column' w='50%'>
 					<Text
 						pb='1.5rem'
@@ -50,24 +67,37 @@ export default function Home() {
 					</Text>
 				</Flex>
 
-				<Flex pt='3rem' pl='12rem' w='50%'>
-					<Box
+				<Flex
+					position='relative'
+					pt='3rem'
+					pb='3.1rem'
+					pl='12rem'
+					w='50%'
+					overflow={"hidden"}
+				>
+					<MotionBox
 						position={"absolute"}
 						ml='-1.5rem'
 						mt='1.5rem'
 						width='550px'
 						height='450px'
-						// backgroundColor="blue.300"
+						// backgroundColor='blue.300'
 						border={"3.5px solid white"}
-						transform='rotate(-25deg)'
 						borderRadius='50%'
 						boxShadow='lg'
+						onMouseEnter={() => {
+							controlsRef.current.play();
+						}}
+						onMouseLeave={() => {
+							controlsRef.current.pause();
+						}}
+						style={{ rotate }}
 					/>
 
 					<Image
 						src={Profile1}
 						alt='José Dotta'
-						w='31rem'
+						w='30vw'
 						border='none'
 					/>
 				</Flex>

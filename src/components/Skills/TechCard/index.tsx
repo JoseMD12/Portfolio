@@ -6,7 +6,7 @@ export default function TechCard() {
 	return (
 		<>
 			<Box
-				boxSize='4rem'
+				boxSize='5.5rem'
 				border='4px solid'
 				borderRadius='8px'
 				color={colors["laranja-principal"]}

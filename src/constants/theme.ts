@@ -8,7 +8,7 @@ const theme = extendTheme({
 	styles: {
 		global: {
 			"::-webkit-scrollbar": {
-				width: "12px",
+				width: "10px",
 				backgroundColor: `rgba(254, 250, 224)`,
 			},
 			"::-webkit-scrollbar-thumb": {

@@ -2,9 +2,9 @@ import { Flex, Image } from "@chakra-ui/react";
 import Waves from "./assets/Template/waves.png";
 import ScrollUpButton from "./components/ScrollUpButton";
 import { colors } from "./constants/colors";
-import Home from "./Pages/Home";
 import MoodBoard from "./Pages/MoodBoard";
 import Skills from "./Pages/Skills";
+import Home from "./Pages/Home";
 
 export default function App() {
 	return (

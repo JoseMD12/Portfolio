@@ -32,7 +32,7 @@ export default function Skills() {
 				alignItems={"center"}
 				justifyContent={"center"}
 			>
-				<SkillsCard upsideDown />
+				<SkillsCard cardDataType='none' upsideDown />
 				<Flex m='0' p='0'>
 					<Flex
 						mx='-5rem'
@@ -42,7 +42,7 @@ export default function Skills() {
 						h='2rem'
 					/>
 				</Flex>
-				<SkillsCard>
+				<SkillsCard cardDataType='Text'>
 					<Text
 						fontSize='18px'
 						color={colors["light"]}
@@ -68,14 +68,16 @@ export default function Skills() {
 					</Text>
 				</SkillsCard>
 
-				<Flex px='2rem'>
+				<Flex px='1vw'>
 					<FaGear size='6rem' color={colors["laranja-principal"]} />
 				</Flex>
 
-				<SkillsCard upsideDown>
+				<SkillsCard cardDataType='TechCard' upsideDown>
+					<TechCard />
+					<TechCard />
 					<TechCard />
 				</SkillsCard>
-				<SkillsCard />
+				<SkillsCard cardDataType='none' />
 			</Flex>
 
 			{/* <Board /> */}
