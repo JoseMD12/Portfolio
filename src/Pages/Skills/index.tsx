@@ -7,7 +7,7 @@ import { colors } from "../../constants/colors";
 export default function Skills() {
 	return (
 		<Flex
-			pt='16rem'
+			pt='6.5rem'
 			textAlign='center'
 			h='fit-content'
 			w='full'
@@ -25,7 +25,7 @@ export default function Skills() {
 			</IntroductionText>
 
 			<Flex
-				mt='2rem'
+				mt='4rem'
 				w='100%'
 				h='fit-content'
 				flexDirection='row'
